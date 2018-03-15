@@ -1,4 +1,4 @@
-// Copyright 2008 The RE2 Authors.  All Rights Reserved.
+﻿// Copyright 2008 The RE2 Authors.  All Rights Reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
@@ -47,7 +47,7 @@ static void RunTest(int len, const string& alphabet, bool donull) {
   }
 
   while (g.HasNext()) {
-    string s = string(g.Next());
+    string s = g.Next().ToString();
     n++;
 
     // Check that all characters in s appear in alphabet.

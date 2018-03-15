@@ -1,4 +1,4 @@
-// Copyright 2007 The RE2 Authors.  All Rights Reserved.
+﻿// Copyright 2007 The RE2 Authors.  All Rights Reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
@@ -128,7 +128,7 @@ TEST(TestRegexpCompileToProg, Simple) {
       failed++;
       continue;
     }
-    ASSERT_TRUE(re->CompileToProg(1) == NULL);
+    CHECK(re->CompileToProg(1) == NULL);
     string s = prog->Dump();
     if (s != t.code) {
       LOG(ERROR) << "Incorrect compiled code for: " << t.regexp;

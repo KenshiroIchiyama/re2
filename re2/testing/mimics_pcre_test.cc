@@ -1,4 +1,4 @@
-// Copyright 2008 The RE2 Authors.  All Rights Reserved.
+﻿// Copyright 2008 The RE2 Authors.  All Rights Reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
@@ -65,8 +65,8 @@ TEST(MimicsPCRE, SimpleTests) {
       if (j == 0)
         flags = flags | Regexp::Latin1;
       Regexp* re = Regexp::Parse(t.regexp, flags, NULL);
-      ASSERT_TRUE(re != NULL) << " " << t.regexp;
-      ASSERT_EQ(t.should_match, re->MimicsPCRE())
+      CHECK(re) << " " << t.regexp;
+      CHECK_EQ(t.should_match, re->MimicsPCRE())
         << " " << t.regexp << " "
         << (j==0 ? "latin1" : "utf");
       re->Decref();
